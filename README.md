@@ -5,3 +5,8 @@
 
 ## Milestones
 1. Scaffold + tooling ✅  
+
+## Current Monde
+- Names and functions
+- Custom Errors
+- Parsing vs scheduling modules
