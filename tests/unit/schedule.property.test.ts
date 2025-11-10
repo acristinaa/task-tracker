@@ -1,9 +1,10 @@
 import { addDays, startOfDay, isWithinInterval } from "date-fns";
-import type { Rule } from "./types";
+import type { Rule } from "@/domain/types";
 
 export interface Occurrence {
   date: Date;
 }
+
 export function expandOccurrences(
   rule: Rule | null,
   windowStart: Date,
@@ -14,9 +15,9 @@ export function expandOccurrences(
   const out: Occurrence[] = [];
   let current = startOfDay(seed);
   const max = rule.count ?? 10;
+
   for (let i = 0; i < max; i++) {
     if (isWithinInterval(current, { start: windowStart, end: windowEnd })) {
-      out.push({ date: current });
     }
     current = addDays(
       current,
